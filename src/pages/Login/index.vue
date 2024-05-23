@@ -41,7 +41,7 @@
 </script>
 <script lang="ts" setup>
 import { ref } from "vue"
-import { useUserInfoStore } from '../../stores/userInfo';
+import { useUserInfoStore } from '../../stores/userInfo.js';
 
 import type { FormInstance } from 'element-plus';
 import { useRouter } from 'vue-router'

@@ -10,7 +10,7 @@ export const useUserInfoStore = defineStore('userInfo', {
 
     state: () => ({
         token: getToken(),
-        nickName: localStorage.getItem('nickName') || '',
+        nickName: '',
         uid: '',
     }),
 
@@ -31,6 +31,7 @@ export const useUserInfoStore = defineStore('userInfo', {
             this.nickName = result.loginUser.nickName
             localStorage.setItem('nickName', result.loginUser.nickName)
             this.uid = result.loginUser.uid
+            localStorage.setItem('uid', result.loginUser.uid)
         },
         initUserInfo() {
             removeToken()

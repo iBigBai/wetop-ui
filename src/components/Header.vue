@@ -96,7 +96,7 @@ const getList = async () => {
 }
 // 页面挂载的生命周期回调
 onMounted(() => {
-  nickName.value = userInfoStore.nickName
+  nickName.value = localStorage.getItem("nickName");
 })
 onMounted(() => {
   getList()
@@ -117,6 +117,8 @@ const Logout = () => {
   removeToken()
   userInfoStore.initUserInfo()
   nickName.value = ""
+  localStorage.setItem("nickName", "")
+  localStorage.setItem("uid", "")
   router.go({ name: "HeadlineNews" });
 }
 

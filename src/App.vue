@@ -1,6 +1,6 @@
 <template>
   <div >
-    <Header v-show="isHeader"></Header>
+    <Header v-if="isHeader"></Header>
     <router-view></router-view>
   </div>
 </template>
