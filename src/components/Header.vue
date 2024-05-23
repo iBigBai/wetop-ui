@@ -54,7 +54,7 @@ export default defineComponent({
 
 <script setup>
 import { getfindAllTypes, isUserOverdue } from '../api/index'
-import { ref, onMounted , getCurrentInstance ,watch, onUpdated} from "vue"
+import { ref, onMounted , getCurrentInstance ,watch, onUpdated, onBeforeMount} from "vue"
 import { useRouter } from 'vue-router'
 import { ArrowDown } from '@element-plus/icons-vue'
 import { removeToken } from '../utils/token-utils' 
@@ -95,7 +95,7 @@ const getList = async () => {
   findAllTypeList.value = result
 }
 // 页面挂载的生命周期回调
-onUpdated(() => {
+onMounted(() => {
   nickName.value = userInfoStore.nickName
 })
 onMounted(() => {
